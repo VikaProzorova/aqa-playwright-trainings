@@ -1,0 +1,22 @@
+{
+  "name": "aqa-playwright-trainings",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "playwright:test:headless": "playwright test",
+    "playwright:test:headed": "playwright test --headed",
+    "playwright:test:headed:chrome": "playwright test --headed --project=chrome",
+    "playwright:test:headed:firefox": "playwright test --headed --project=firefox",
+    "playwright:ui": "playwright test --ui",
+    "format": "prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@types/node": "^24.3.0",
+    "prettier": "3.6.2"
+  }
+}
