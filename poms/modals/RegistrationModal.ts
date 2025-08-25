@@ -53,38 +53,30 @@ export class RegistrationModal extends BaseModal {
     await expect(locator).toHaveCSS("border-color", errorBorderColor);
   }
 
-  async checkNameInputError(errorMsg: string) {
-    await this.selectors.nameInput.blur();
+  async checkInputError(locator: Locator, errorMsg: string) {
+    await locator.blur();
     await this.isSubmitButtonDisabled();
-    await this.isInputBorderedRed(this.selectors.nameInput);
+    await this.isInputBorderedRed(locator);
     await this.isErrorMessageVisible(errorMsg);
+  }
+
+  async checkNameInputError(errorMsg: string) {
+    await this.checkInputError(this.selectors.nameInput, errorMsg);
   }
 
   async checkLastNameInputError(errorMsg: string) {
-    await this.selectors.lastNameInput.blur();
-    await this.isSubmitButtonDisabled();
-    await this.isInputBorderedRed(this.selectors.lastNameInput);
-    await this.isErrorMessageVisible(errorMsg);
+    await this.checkInputError(this.selectors.lastNameInput, errorMsg);
   }
 
   async checkEmailInputError(errorMsg: string) {
-    await this.selectors.emailInput.blur();
-    await this.isSubmitButtonDisabled();
-    await this.isInputBorderedRed(this.selectors.emailInput);
-    await this.isErrorMessageVisible(errorMsg);
+    await this.checkInputError(this.selectors.emailInput, errorMsg);
   }
 
   async checkPasswordInputError(errorMsg: string) {
-    await this.selectors.passwordInput.blur();
-    await this.isSubmitButtonDisabled();
-    await this.isInputBorderedRed(this.selectors.passwordInput);
-    await this.isErrorMessageVisible(errorMsg);
+    await this.checkInputError(this.selectors.passwordInput, errorMsg);
   }
 
   async checkRepeatPasswordInputError(errorMsg: string) {
-    await this.selectors.repeatPasswordInput.blur();
-    await this.isSubmitButtonDisabled();
-    await this.isInputBorderedRed(this.selectors.repeatPasswordInput);
-    await this.isErrorMessageVisible(errorMsg);
+    await this.checkInputError(this.selectors.repeatPasswordInput, errorMsg);
   }
 }
