@@ -4,8 +4,6 @@ export class BaseModal {
   protected page: Page;
   protected context: BrowserContext;
   public selectors: Record<string, Locator>;
-  //errorBorderColor: "rgb(220, 53, 69)";
-  //errorInputClass: "is-invalid";
 
   constructor(page: Page, context: BrowserContext) {
     this.page = page;
@@ -14,15 +12,12 @@ export class BaseModal {
       modalContent: this.page.locator('[class="modal-content"]'),
       modalHeader: this.page.locator('[class="modal-header"]'),
       submitButton: this.page.locator('[class="modal-footer"] [class$="primary"]'),
-      //errorMessage: this.page.locator('[class=".invalid-feedback"]'),
     };
   }
 
   async isModalVisible() {
     await expect(this.selectors.modalContent).toBeVisible();
   }
-
-  //async getErrorMessage() {}
 
   async isSubmitButtonDisabled() {
     await expect(this.selectors.submitButton).toBeDisabled();
