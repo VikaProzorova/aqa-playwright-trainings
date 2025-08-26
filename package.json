@@ -7,7 +7,8 @@
     "playwright:test": "playwright test",
     "playwright:test:headed": "playwright test --headed",
     "playwright:ui": "playwright test --ui",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
