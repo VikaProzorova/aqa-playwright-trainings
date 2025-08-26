@@ -7,6 +7,8 @@
     "playwright:test": "playwright test",
     "playwright:test:headed": "playwright test --headed",
     "playwright:ui": "playwright test --ui",
+    "playwright:test:qauto": "cross-env ENV_NAME=qauto npm run playwright:test",
+    "playwright:test:qauto2": "cross-env ENV_NAME=qauto2 npm run playwright:test",
     "format": "prettier --write .",
     "build": "tsc"
   },
@@ -18,5 +20,9 @@
     "@playwright/test": "^1.54.2",
     "@types/node": "^24.3.0",
     "prettier": "3.6.2"
+  },
+  "dependencies": {
+    "cross-env": "^10.0.0",
+    "dotenv": "^17.2.1"
   }
 }
