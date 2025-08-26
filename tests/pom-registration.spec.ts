@@ -1,12 +1,12 @@
 import { test } from "@playwright/test";
-import { Header, LandingPage } from "../poms";
+import { Header, LandingPage, RegistrationModal } from "../poms";
 import errors from "../utils/errorMessages.json";
 import { validUserData, invalidUserData } from "../utils/testsContent";
 
 test.describe("POM-based tests of Registration", () => {
-  let landingPage;
-  let registrationModal;
-  let header;
+  let landingPage: LandingPage;
+  let registrationModal: RegistrationModal;
+  let header: Header;
 
   const { name, lastName, email, password, repeatPassword } = errors.registrationForm;
 

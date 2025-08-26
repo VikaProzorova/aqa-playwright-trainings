@@ -1,6 +1,14 @@
 import { faker } from "@faker-js/faker";
 
-export const validUserData: Record<string, string> = {
+export interface RegistrationUser {
+  name: string;
+  lastName: string;
+  email: string;
+  password: string;
+  repeatPassword: string;
+}
+
+export const validUserData: RegistrationUser = {
   name: faker.person.firstName().replace(/[^a-zA-Z]/g, ""),
   lastName: faker.person.lastName().replace(/[^a-zA-Z]/g, ""),
   email: faker.internet.email({ provider: "qauto.faker" }),
