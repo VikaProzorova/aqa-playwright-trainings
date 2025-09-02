@@ -1,6 +1,6 @@
 import { BrowserContext, expect, Page } from "@playwright/test";
 
-export class BaseModal {
+export class BaseErrorModal {
   protected page: Page;
   protected context: BrowserContext;
 
@@ -13,16 +13,12 @@ export class BaseModal {
     return {
       modalContent: this.page.locator('[class="modal-content"]'),
       modalHeader: this.page.locator('[class="modal-header"]'),
-      submitButton: this.page.locator('[class^="modal-footer"] [class$="primary"]'),
+      submitButton: this.page.locator('[class^="modal-footer"] [class$="btn-danger"]'),
     };
   }
 
   async isModalVisible() {
     await expect(this.selectors.modalContent).toBeVisible();
-  }
-
-  async isSubmitButtonDisabled() {
-    await expect(this.selectors.submitButton).toBeDisabled();
   }
 
   async isSubmitButtonVisible() {

@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "playwright:test": "playwright test",
-    "playwright:test:headed": "playwright test --headed",
-    "playwright:ui": "playwright test --ui",
-    "playwright:test:qauto": "cross-env ENV_NAME=qauto npm run playwright:test",
-    "playwright:test:qauto2": "cross-env ENV_NAME=qauto2 npm run playwright:test",
+    "pw:test": "playwright test",
+    "pw:test:headed": "playwright test --headed",
+    "pw:ui": "playwright test --ui",
+    "pw:test:qauto": "cross-env ENV_NAME=qauto npm run pw:test",
+    "pw:test:qauto2": "cross-env ENV_NAME=qauto2 npm run pw:test",
+    "pw:test:chrome-setup": "playwright test --project=chrome-setup",
     "format": "prettier --write .",
     "build": "tsc"
   },

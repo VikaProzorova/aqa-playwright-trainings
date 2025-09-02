@@ -35,3 +35,9 @@ export const invalidUserData = {
     "%".repeat(8),
   ],
 };
+
+export const carTestData = {
+  brand: "Porsche",
+  model: "Cayenne",
+  mileage: "50",
+};
