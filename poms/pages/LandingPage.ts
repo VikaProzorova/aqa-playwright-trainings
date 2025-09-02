@@ -1,4 +1,4 @@
-import { RegistrationModal } from "../modals";
+import { RegistrationModal, LoginModal } from "../modals";
 import { BasePage } from "./BasePage";
 import { BrowserContext, Page, Locator, expect } from "@playwright/test";
 
@@ -8,6 +8,7 @@ export class LandingPage extends BasePage {
     super(page, "/", context);
     this.selectors = {
       signUpButton: this.page.getByRole("button", { name: "Sign up" }),
+      signInButton: this.page.getByRole("button", { name: "Sign In" }),
     };
   }
 
@@ -18,5 +19,10 @@ export class LandingPage extends BasePage {
   async clickSignUp() {
     this.selectors.signUpButton.click();
     return new RegistrationModal(this.page, this.context);
+  }
+
+  async clickSignIn() {
+    this.selectors.signInButton.click();
+    return new LoginModal(this.page, this.context);
   }
 }
