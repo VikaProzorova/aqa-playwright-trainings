@@ -6,19 +6,19 @@ export class ApiClient {
     this.apiRequest = apiRequest;
   }
 
-  async get(url: string, options = {}) {
+  protected async get(url: string, options = {}) {
     return this.apiRequest.get(url, options);
   }
 
-  async post(url: string, options = {}) {
+  protected async post(url: string, options = {}) {
     return this.apiRequest.post(url, options);
   }
 
-  async put(url: string, options = {}) {
+  protected async put(url: string, options = {}) {
     return this.apiRequest.put(url, options);
   }
 
-  async delete(url: string, options = {}) {
+  protected async delete(url: string, options = {}) {
     return this.apiRequest.delete(url, options);
   }
 }
