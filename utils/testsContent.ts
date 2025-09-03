@@ -41,3 +41,34 @@ export const carTestData = {
   model: "Cayenne",
   mileage: "50",
 };
+
+export const validCarDataForApi = {
+  createCar: {
+    carBrandId: 3,
+    carModelId: 12,
+    mileage: 88,
+  },
+  updateCar: {
+    carBrandId: 3,
+    carModelId: 12,
+    mileage: 200,
+  },
+};
+
+export const invalidCarDataForApi = {
+  invalidBrand: {
+    carBrandId: 100500,
+    carModelId: 1,
+    mileage: 200,
+  },
+  invalidModel: {
+    carBrandId: 3,
+    carModelId: 9999,
+    mileage: 2,
+  },
+  invalidMileage: {
+    carBrandId: 3,
+    carModelId: 12,
+    mileage: -1,
+  },
+};
