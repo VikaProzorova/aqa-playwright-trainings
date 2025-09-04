@@ -11,6 +11,7 @@
     "pw:test:qauto2": "cross-env ENV_NAME=qauto2 npm run pw:test",
     "pw:test:chrome-setup": "playwright test --project=chrome-setup",
     "pw:test:api": "playwright test tests/api-tests",
+    "pw:test:firefox": "playwright test --project=firefox",
     "format": "prettier --write .",
     "build": "tsc"
   },
