@@ -48,13 +48,12 @@ export default defineConfig({
       testMatch: /.*\.setup\./,
       use: {
         ...devices["Desktop Chrome"],
-        channel: "chrome",
       },
     },
     {
       name: "chrome-setup",
       testMatch: /.*\.authorized/,
-      use: { ...devices["Desktop Chrome"], channel: "chrome", storageState: ".auth/user.json" },
+      use: { ...devices["Desktop Chrome"], storageState: ".auth/user.json" },
       dependencies: ["setup"],
     },
     {
